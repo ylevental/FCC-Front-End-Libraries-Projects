@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - 25 + 5 Clock</title>
+  <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono|Righteous" rel="stylesheet"><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<p>25 + 5 Countdown Clock</p>
+<p id="break-label">Break Length: <span id="break-length">5</span></p>
+<p id="session-label">Session Length: <span id="session-length">25</span></p>
+<button id="break-decrement" onclick="decrement('break-length')">Break Decrement</button>
+<button id="break-increment" onclick="increment('break-length')">Break Increment</button>
+<button id="session-decrement" onclick="decrement('session-length')">Session Decrement</button>
+<button id="session-increment" onclick="increment('session-length')">Session Increment</button>
+<p id="timer-label">Session <span id="time-left"></span></p>
+<button id="start_stop" onclick="startStop()">Start/Stop</button>
+<button id="reset" onclick="hard_reset_clock()">Reset</button>
+<audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" preload="auto"></audio>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js'></script>
+<script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
