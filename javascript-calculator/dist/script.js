@@ -1,0 +1,66 @@
+var x = ["0"];
+var calcSum = 0;
+var decCount = 0;
+var sumOper = [];
+
+function number(a) {
+
+  finaloper();
+
+  if (x[x.length - 1] == 0 && decCount == 0) {
+    x[x.length - 1] = a;
+  } else
+  if (x[x.length - 1] == '*' || x[x.length - 1] == '+' || x[x.length - 1] == '-' || x[x.length - 1] == '/') {
+    x.push(a);
+  } else
+  {
+    x[x.length - 1] = x[x.length - 1] + a;
+  }
+
+  document.getElementById("display").innerHTML = x[x.length - 1];
+}
+
+function oper(a) {
+  sumOper.push(a);
+  decCount = 0;
+  document.getElementById("display").innerHTML = x[x.length - 1];
+}
+
+function finaloper() {
+  if (sumOper.length > 1 && sumOper[sumOper.length - 1] == '-') {
+    x = [x, sumOper[sumOper.length - 2], sumOper[sumOper.length - 1]];
+  } else
+
+  if (sumOper.length > 0) {
+    x = [x, sumOper[sumOper.length - 1]];
+  }
+  sumOper = [];
+}
+
+
+function clc() {
+  x = ['0'];
+  decCount = 0;
+  document.getElementById("display").innerHTML = x[x.length - 1];
+}
+
+function equal() {
+  x = x.flat(Infinity);
+  calcSum = eval(x.join(''));
+  x = [calcSum];
+  document.getElementById("display").innerHTML = x[x.length - 1];
+}
+
+function decimal() {
+
+  if (x[x.length - 1] == '*' || x[x.length - 1] == '+' || x[x.length - 1] == '-' || x[x.length - 1] == '/' && decCount < 1) {
+    decCount = decCount + 1;
+    x.push(['0.']);
+  } else
+  if (decCount < 1) {
+    decCount = decCount + 1;
+    x[x.length - 1] = x[x.length - 1] + '.';
+    document.getElementById("display").innerHTML = x[x.length - 1];
+  }
+
+}
